@@ -31,16 +31,6 @@ edx_ansible_debian_pkgs:
   - curl
   - python-yaml
 
-edx_ansible_release_specific_debian_pkgs:
-  xenial:
-    - python-pip
-    - python-mysqldb
-  bionic:
-    - python-pip
-    - python-mysqldb
-  focal:
-    - python3-mysqldb
-
 edx_ansible_app_dir: "{{ COMMON_APP_DIR }}/edx_ansible"
 edx_ansible_code_dir: "{{ edx_ansible_app_dir }}/edx_ansible"
 edx_ansible_data_dir: "{{ COMMON_DATA_DIR }}/edx_ansible"

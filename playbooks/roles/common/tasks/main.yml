@@ -108,13 +108,13 @@
 # We’ll be installing pip for Python2.7 using the get-pip.py script
 - name: Download pip installer
   get_url:
-    url=https://bootstrap.pypa.io/get-pip.py
-    dest=/tmp/get-pip.py
-    mode=0440
+    url: "{{ common_pip_installer_url }}"
+    dest: /tmp/{{ common_pip_installer }}
+    mode: 0440
   when: ansible_distribution_release == 'focal'
 
 - name: Install pip
-  command: /usr/bin/python2.7 /tmp/get-pip.py
+  command: /usr/bin/python2.7 /tmp/{{ common_pip_installer }}
   when: ansible_distribution_release == 'focal'
 
 - name: Install role-independent packages useful for devstack.

@@ -127,12 +127,13 @@ common_debian_pkgs_default:
   - git
   - unzip
   - python2.7-dev
+  - net-tools
 
 common_release_specific_debian_pkgs:
   xenial:
     - python-pip
-  focal:
-    - net-tools
+  bionic:
+    - python-pip
 
 common_debian_pkgs: "{{ common_debian_pkgs_default + common_release_specific_debian_pkgs[ansible_distribution_release] }}"
 
@@ -152,6 +153,9 @@ common_pip_pkgs:
   - virtualenv==16.7.10
   - boto3
   - PyMySQL
+
+common_pip_installer: "get-pip.py"
+common_pip_installer_url: "https://bootstrap.pypa.io/{{ get-pip.py }}"
 
 common_web_user: www-data
 common_web_group: www-data

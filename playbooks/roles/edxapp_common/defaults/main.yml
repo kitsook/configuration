@@ -28,6 +28,8 @@ edxapp_common_debian_pkgs_default:
 edxapp_common_release_specific_debian_pkgs:
   xenial:
     - libpng12-dev
+  bionic:
+    - libpng-dev
   focal:
     - libpng-dev
 
