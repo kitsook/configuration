@@ -49,6 +49,15 @@
     - "install:app-requirements"
     - "mongo_packages"
 
+- name: add the libssl repo
+  apt_repository:
+    repo: "deb http://security.ubuntu.com/ubuntu bionic-security main"
+    state: present
+  tags:
+    - "install"
+    - "install:app-requirements"
+    - "mongo_packages"
+
 - name: install mongo server and recommends
   apt:
     pkg: "{{ item }}"
@@ -62,6 +71,9 @@
     - "install"
     - "install:app-requirements"
     - "mongo_packages"
+
+- name: Remove MONGO BIONIC REPO
+  file: path=/etc/apt/sources.list.d/security_ubuntu_com_ubuntu.list state=absent
 
 - name: create mongo dirs
   file:

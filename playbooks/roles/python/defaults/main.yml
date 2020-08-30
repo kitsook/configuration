@@ -1,7 +1,11 @@
 # Install python2.7 + the /usr/bin/python symlink.
 
-python_packages:
-  - python-minimal
+python_release_specific_packages:
+  xenial:
+    - python-minimal
+  bionic:
+    - python-minimal
+  focal:
+    - python2.7-minimal
 
-python2_packages:
-  - python2.7-minimal
+python_packages: "{{ python_release_specific_packages[ansible_distribution_release] }}"

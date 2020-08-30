@@ -104,6 +104,19 @@
     update_cache: yes
   when: ansible_distribution in common_debian_variants
 
+# Pip for Python2.7 is not included in the Ubuntu 20.04 repositories
+# We’ll be installing pip for Python2.7 using the get-pip.py script
+- name: Download pip installer
+  get_url:
+    url=https://bootstrap.pypa.io/get-pip.py
+    dest=/tmp/get-pip.py
+    mode=0440
+  when: ansible_distribution_release == 'focal'
+
+- name: Install pip
+  command: /usr/bin/python2.7 /tmp/get-pip.py
+  when: ansible_distribution_release == 'focal'
+
 - name: Install role-independent packages useful for devstack.
   apt:
     name: "{{ common_debian_devstack_pkgs }}"
