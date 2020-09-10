@@ -19,7 +19,7 @@
   git:
     dest: "{{ program_console_code_dir }}"
     repo: "{{ program_console_repo }}"
-    version: "{{ program_console_VERSION }}"
+    version: "{{ PROGRAM_CONSOLE_VERSION }}"
     accept_hostkey: yes
   become_user: "{{ program_console_user }}"
   register: program_console_checkout
