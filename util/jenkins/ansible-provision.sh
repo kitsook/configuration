@@ -224,7 +224,7 @@ THEMES_VERSION: $themes_version
 REGISTRAR_VERSION: $registrar_version
 LEARNER_PORTAL_VERSION: $learner_portal_version
 PROGRAM_MANAGER_VERSION: $program_manager_version
-PROGRAM_CONSOLE_VERSION: $program_console_version
+PROGRAM_CONSOLE_VERSION: $program_manager_version
 PROSPECTUS_VERSION: $prospectus_version
 
 edx_ansible_source_repo: ${configuration_source_repo}
