@@ -15,6 +15,7 @@
       - xqueue
       - learner_portal
       - program_manager
+      - program_console
       - prospectus
       nginx_default_sites:
       - lms
