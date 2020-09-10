@@ -140,12 +140,12 @@ apt-get install -y python3-jinja2 build-essential sudo git-core libmysqlclient-d
 
 apt-get install -y python${PYTHON_VERSION} python${PYTHON_VERSION}-dev python3-pip python3-apt
 
-python${PYTHON_VERSION} -m pip install --upgrade pip=="${PIP_VERSION}"
+pip3 install --upgrade pip=="${PIP_VERSION}"
 
 # pip moves to /usr/local/bin when upgraded
 PATH=/usr/local/bin:${PATH}
-python${PYTHON_VERSION} -m pip install setuptools=="${SETUPTOOLS_VERSION}"
-python${PYTHON_VERSION} -m pip install virtualenv=="${VIRTUAL_ENV_VERSION}"
+pip3 install setuptools=="${SETUPTOOLS_VERSION}"
+pip3 install virtualenv=="${VIRTUAL_ENV_VERSION}"
 
 if [[ "true" == "${RUN_ANSIBLE}" ]]; then
     # create a new virtual env
